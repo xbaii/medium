@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<a class="firstbar" href="https://medium.com/"> M 
+			<a class="secondbar" href="https://medium.com/react-tutorials"> 
+				<img src="https://d262ilb51hltx0.cloudfront.net/fit/c/64/64/1*bs9PbxDndAW7mmqve3EQ-w.jpeg"></a>
+		</a>
+		<a class="profile" href="https://medium.com/@baileyleising">Bailey Leising
+		</a>
+
+
+		<img class="image" src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*bs9PbxDndAW7mmqve3EQ-w.jpeg">
+		<h1 class="partitle"> React Components </h1>
+		<p class="para">
+		<meta charset="UTF-8">Components are the smallest, yet most fundamental part of React. They’re similar, in concepts, to things like widgets and modules. React defines itself as a <em>library for building user interfaces.</em> As such, when you think of a user interface you want to build (with React), you need to think of it in terms of the smallest possible components that you can define.<br class="pbreak">
+		These components include code which defines how DOM elements are created and how users can interact with them. Components can be defined purely in JavaScript or they can be defined in a superset (or extended variation) of JavaScript called JSX. If you decide to use JSX for your component definitions, you may also need a compiler application, but we’ll get to that in a minute.<br class="pbreak">
+		<em>We’re going to be referring to pure JavaScript as JS and the React version of JavaScript as JSX.<br class="pbreak">
+		You can find the accompanying source-code, for this tutorial, at: <a class="gitlink" href="https://github.com/formativ/tutorial-react-components">https://github.com/formativ/tutorial-react-components.</a><br class="pbreak">
+		Please post any errors you find, or questions you have as comments on this article or as issues on GitHub.<br class="pbreak">
+		Thanks to Pete Hunt for helping to improve this!</em></br></p>
+
+		<h2 class="twoheader">Embedded HTML</h2>
+		<p class="para">
+		If you’ve been developing websites for a while, you may have flinched when I spoke about using HTML within your JavaScript. For the longest time, a development paradigm has existed which says that you should split HTML and JavaScript. Words like unobtrusive have been repurposed to express this kind of separation. That is exactly how I felt, until I started working with React.<br class="pbreak">
+		The reason this paradigm exists is to decrease coupling (how much things depend on each other) and increase cohesion (how well different things work together). So we have created an environment in which we try our best to make HTML (and templates) as free of logic as possible. We then need to attach behaviour to this in the form of external scripts.<br class="pbreak">
+		There are trade-offs with this approach to doing things. For starters, it takes more effort trying to keep these two things separate. There are many template engines and languages. There are also many template parsers to handle them all. And yet these languages (with the exception of HTML) still seem to include a modicum of logical operations…<br class="pbreak">
+		Additionally, when we need to modify the contents of a web page, via JavaScript, we have to know about HTML and/or templates. How else can we know what to display and where to display it? We could load external templates, via additional HTTP requests, but how would we know where to put it without some knowledge of the DOM? We could load templates embedded within special script tags, but we would first need to fetch the contents of those script tags.<br class="pbreak">
+		This brings us to the biggest problem with the separation of HTML and JavaScript: The only way we can get elements to attach behaviour to, and read data from, is by knowing about HTML elements in the document. Libraries like jQuery are built around the idea that HTML elements are only a CSS selector away from JavaScript.<br class="pbreak">
+		<em>These points from from a presentation I found at: http://www.slideshare.net/floydophone/react-preso-v2.</em></br></p>
+
+		<h2 class="twoheader">Components</h2>
+		<p class="para">
+		Hopefully you’re willing to try this whole embedded HTML thing. In case not, I will create JS examples along with the JSX examples in this tutorial Let’s look at a simple component, just to get a feel for how one defines them:</p>
+			<div class="parag">
+			/**<br>
+				* @jsx React.DOM<br>
+				*/<br>
+				  
+			var HelloWorld = React.createClass({<br>
+				 render : function() {<br>
+				   return <div>hello world!</div>;<br>
+				}<br>
+			});<br>
+
+			React.renderComponent(<br>
+				<HelloWorld />,<br>
+				document.body<br>
+			);
+			</div>
+		<p class="para">
+		The same code, in pure JavaScript looks much the same:</p>
+			<div class="parag">
+			var HelloWorld = React.createClass({<br>
+  				render : function() {<br>
+    				return React.DOM.div({<br>
+      					children : "hello world!"<br>
+    				});<br>
+  				}<br>
+			});<br>
+
+			React.renderComponent(<br>
+  				HelloWorld({}),<br>
+  				document.body<br>
+			);<br>
+			</div>
+		<h2 class="twoheader">Conclusion</h2>
+		<p class="para">
+		Components are at the heart of React, and understanding them is essential to understanding how to build solid React interfaces. We’ve taken a brief look at a few examples, but there’s so much more to components. Stay tuned!<br>
+
+		If you enjoyed this tutorial; it would be helpful if you could click the Recommend button and share it with other developers.<br></p>
+		<form method="link" action="https://medium.com/react-tutorials/react-components-828c397e3dc8">
+			<input class="button" type="submit" value="Real Page">
+		</form>
+</FORM>
+</form>
+	</body>
+</html>
